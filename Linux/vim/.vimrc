@@ -2,11 +2,17 @@
 set nu
 "相对行号
 "set relativenumber
+"右下角显示命令
+set showcmd
 "在上下移动光标时，光标上方或下方保留显示的行数
 set scrolloff=7
 "设置tab键
 set softtabstop=4
 set tabstop=4
+"空格代替tab
+set expandtab
+"makefile文件保持tab
+autocmd FileType make set noexpandtab
 "自动缩进
 set autoindent
 set cindent
@@ -21,6 +27,9 @@ hi MatchParen ctermbg=240 ctermfg=200 guibg=lightblue
 "弹出菜单
 hi Pmenu ctermbg=243
 hi SpellBad ctermbg=196
+"显示空白字符 缩进:>>> ,行尾空格:·, 左边超出屏幕部分:«,右边超出屏幕部分:»
+set listchars=tab:>>\ ,trail:·,extends:»,precedes:«
+set list
 "文件编码
 set encoding=utf-8
 set fenc=utf-8
@@ -100,6 +109,7 @@ call plug#begin()
 	Plug 'mhinz/vim-startify'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python'] }
 call plug#end()
 "let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
@@ -115,7 +125,7 @@ let g:gruvbox_guisp_fallback='bg'
 "let g:gruvbox_termcolors=16
 colorscheme gruvbox
 "手动设置背景色
-hi Normal ctermbg=0
+hi Normal ctermbg=none
 
 "设置ctags
 set tags=./tags;,/usr/include/.tags,tags
@@ -131,3 +141,7 @@ if &term =~ '256color'
     " see also http://snk.tuxfamily.org/log/vim-256color-bce.html  
 	set t_ut=                                                         
 endif
+
+"tab选中补全，shitf+tab反向
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
