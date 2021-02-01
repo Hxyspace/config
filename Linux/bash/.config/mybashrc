@@ -2,7 +2,14 @@
 # -->在.bashrc文件末尾添加 source (filepath)/mybashrc 即可生效
 
 #设置提示符
-PS1='${debian_chroot:+($debian_chroot)}\e[38;5;27m╭\e[48;5;197m 🐹\e[48;5;63;38;5;197m\e[48;5;63;38;5;232m\u@\h\e[48;5;112;38;5;63m\e[48;5;112;38;5;232m\w\e[48;5;244;38;5;112m\e[00m\e[38;5;244m$([ $? -eq 0 ] && echo "\e[38;2;0;255;0m ✓" ||echo "\e[38;2;255;0;0m ✘")\r\e[$(($COLUMNS-9))C\e[38;2;95;95;255m \e[38;5;25m\e[48;5;25;38;5;27m\e[48;5;27;38;5;253m\A\e[0m\n\[\e[38;5;27m\]╰\[\e[38;5;198m\]\[\e[38;5;214m\]\[\e[00m\]'
+PS1='\e[38;5;27m╭\e[48;5;239m \e[48;5;63;38;5;239m\e[48;5;63;38;5;232m\u@\h\e[48;5;91;38;5;63m\e[48;5;91;38;5;232m\w\e[48;5;244;38;5;91m\e[00m\e[38;5;244m$([ $? -eq 0 ] && echo "\e[38;2;0;255;0m ✓" ||echo "\e[38;2;255;0;0m ✘")\r\e[$(($COLUMNS-9))C\e[38;2;95;95;255m \e[38;5;25m\e[48;5;25;38;5;27m\e[48;5;27;38;5;0m\A\e[0m\n\[\e[38;5;27m\]╰\[\e[38;5;198m\]\[\e[38;5;214m\]\[\e[00m\]'
+
+#如果在vim或vscode中打开terminal，则修改提示符,并且不执行cowsay
+if [ -n "$VIM_TERMINAL" ] || [ -n "$TERM_PROGRAM" ]; then
+    PS1='> '
+else
+    fortune | cowthink | lolcat
+fi
 
 #设置默认文件创建权限
 umask 0002
@@ -10,10 +17,8 @@ umask 0002
 #if which tmux 2>&1 >/dev/null;then
 #	test -z "$TMUX" && (tmux attach || tmux)
 #fi
-#fortune | cowthink | lolcat
 
 #设置终端类型
 export TERM=xterm-256color
-
-#这句建议放在~/.profile文件内
-#fortune | cowthink | lolcat
+#alias cman="man -M /usr/share/man/zh_CN"
+#export DISPLAY=:0

@@ -17,6 +17,10 @@ autocmd FileType make set noexpandtab
 set autoindent
 set cindent
 set shiftwidth=4
+"文件在外部被修改时，自动更新载入
+"set autoread
+"切换文件时自动保存
+"set autowrite
 "设置256色
 set t_Co=256
 "主题
@@ -27,6 +31,8 @@ hi MatchParen ctermbg=240 ctermfg=200 guibg=lightblue
 "弹出菜单
 hi Pmenu ctermbg=243
 hi SpellBad ctermbg=196
+"增量搜索
+set incsearch
 "显示空白字符 缩进:>>> ,行尾空格:·, 左边超出屏幕部分:«,右边超出屏幕部分:»
 set listchars=tab:>>\ ,trail:·,extends:»,precedes:«
 set list
@@ -66,8 +72,18 @@ nnoremap <esc>w :bd<CR>
 " H 和 L 跳转行首行末
 noremap H ^
 noremap L $
+"进入搜索very magic模式 Use sane regexes
+nnoremap / /\v
+vnoremap / /\v
 "鼠标暂不启用
 set mouse-=a
+"内置terminal
+set termwinsize=6*0
+"默认竖直分屏位置 (为了使内置终端默认在底下)
+set splitbelow
+"ctrl+`打开/关闭内置terminal
+nnoremap <C-S-j> :ter<CR>
+tnoremap <C-S-j> <C-w><C-c>
 "设置标签栏
 "set showtabline=2
 "set guioptions-=m           " 隐藏菜单栏
@@ -109,12 +125,21 @@ call plug#begin()
 	Plug 'mhinz/vim-startify'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    "补全框架
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python'] }
+    "括号补全
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
-"let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-"补全后自动关闭预览窗口
-"let g:ycm_autoclose_preview_window_after_completion=1
+
+"跳出括号函数
+func SkipPair()
+    let c = getline('.')[col('.') - 1]
+    if c =~ '[\)\]\}\"'';]'
+        return "\<Right>"
+    else
+        return "\<TAB>"
+    endif
+endfunc
 
 "airline设置
 let g:airline_powerline_fonts=1
@@ -142,6 +167,6 @@ if &term =~ '256color'
 	set t_ut=                                                         
 endif
 
-"tab选中补全，shitf+tab反向
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"tab选中补全或跳出括号，shitf+tab反向
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<c-r>=SkipPair()<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
