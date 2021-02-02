@@ -1,5 +1,5 @@
 "设置行号
-set nu
+"set nu
 "相对行号
 "set relativenumber
 "右下角显示命令
@@ -124,7 +124,7 @@ call plug#begin()
 	Plug 'morhetz/gruvbox'
 	Plug 'mhinz/vim-startify'
 	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+    Plug 'Hxyspace/vim-airlineish'
     "补全框架
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "括号补全
@@ -144,16 +144,14 @@ endfunc
 "airline设置
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
-let g:airline_theme="badwolf"
+let g:airline_theme="airlineish"
 "主题
-let g:gruvbox_guisp_fallback='bg'
-"let g:gruvbox_termcolors=16
 colorscheme gruvbox
 "手动设置背景色
 hi Normal ctermbg=none
 
 "设置ctags
-set tags=./tags;,/usr/include/.tags,tags
+"set tags=./tags;,/usr/include/.tags,tags
 
 "nerdtree config
 nnoremap <esc>b :NERDTreeToggle<CR>
@@ -164,7 +162,7 @@ if &term =~ '256color'
 	" disable Background Color Erase (BCE) so that color schemes
     " render properly when inside 256-color tmux and GNU screen.
     " see also http://snk.tuxfamily.org/log/vim-256color-bce.html  
-	set t_ut=                                                         
+	set t_ut=
 endif
 
 "tab选中补全或跳出括号，shitf+tab反向
