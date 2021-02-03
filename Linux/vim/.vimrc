@@ -21,8 +21,13 @@ set shiftwidth=4
 "set autoread
 "切换文件时自动保存
 "set autowrite
-"设置256色
-set t_Co=256
+"设置真彩色
+if has("termguicolors")
+    " enable true color
+    set termguicolors
+else
+    set t_Co=256
+endif
 "主题
 "autocmd vimenter * colorscheme gruvbox
 set background=dark
@@ -148,7 +153,7 @@ let g:airline_theme="airlineish"
 "主题
 colorscheme gruvbox
 "手动设置背景色
-hi Normal ctermbg=none
+hi Normal guibg=NONE ctermbg=none
 
 "设置ctags
 "set tags=./tags;,/usr/include/.tags,tags
