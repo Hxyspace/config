@@ -86,9 +86,8 @@ set mouse-=a
 set termwinsize=6*0
 "默认竖直分屏位置 (为了使内置终端默认在底下)
 set splitbelow
-"ctrl+`打开/关闭内置terminal
-nnoremap <C-S-j> :ter<CR>
-tnoremap <C-S-j> <C-w><C-c>
+"关闭内置terminal
+tnoremap <C-j> <C-w><C-c>
 "设置标签栏
 "set showtabline=2
 "set guioptions-=m           " 隐藏菜单栏
@@ -153,7 +152,9 @@ let g:airline_theme="airlineish"
 "主题
 colorscheme gruvbox
 "手动设置背景色
-hi Normal guibg=NONE ctermbg=none
+hi Normal guibg=NONE ctermbg=NONE
+let g:terminal_ansi_colors=['#000000', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#bbbbbb', '#44475a', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#ffffff']
+hi Terminal guibg='#282a36'
 
 "设置ctags
 "set tags=./tags;,/usr/include/.tags,tags
