@@ -2,7 +2,11 @@
 # -->在.bashrc文件末尾添加 source (filepath)/mybashrc 即可生效
 
 #设置提示符
-PS1='\e[38;5;27m╭\e[48;5;239m \e[48;5;63;38;5;239m\e[48;5;63;38;5;232m\u@\h\e[48;5;91;38;5;63m\e[48;5;91;38;5;232m\w\e[48;5;244;38;5;91m\e[00m\e[38;5;244m$([ $? -eq 0 ] && echo "\e[38;2;0;255;0m ✓" ||echo "\e[38;2;255;0;0m ✘")\r\e[$(($COLUMNS-9))C\e[38;2;95;95;255m \e[38;5;25m\e[48;5;25;38;5;27m\e[48;5;27;38;5;0m\A\e[0m\n\[\e[38;5;27m\]╰\[\e[38;5;198m\]\[\e[38;5;214m\]\[\e[00m\]'
+PS1='\e[38;5;27m╭\e[48;5;239m \e[48;5;63;38;5;239m\e[48;5;63;38;5;232m\u@\h\e[48;5;91;38;5;63m\e[48;5;91;38;5;232m\w\e[48;5;244;38;5;91m\e[00m\e[38;5;244m$([ $? -eq 0 ] && echo "\e[38;2;0;255;0m ✓" ||echo "\e[38;2;255;0;0m ✘")         \r\e[$(($COLUMNS-9))C\e[38;2;95;95;255m \e[38;5;25m\e[48;5;25;38;5;27m\e[48;5;27;38;5;0m\A\e[0m\n\[\e[38;5;27m\]╰\[\e[38;5;198m\]\[\e[38;5;214m\]\[\e[00m\]'
+
+if [ "$sshclient"a = 'default'a ]; then
+    PS1='\e[38;5;27m┌\e[48;5;239m  \e[48;5;63;38;5;239m \e[48;5;63;38;5;232m\u@\h \e[48;5;91;38;5;63m \e[48;5;91;38;5;232m\w \e[48;5;244;38;5;91m \e[00m\e[38;5;244m$([ $? -eq 0 ] && echo "\e[38;2;0;255;0m ✓" ||echo "\e[38;2;255;0;0m ✘")      \r\e[$(($COLUMNS-6))C\e[48;5;25;38;5;27m \e[48;5;27;38;5;0m\A\e[0m\n\[\e[38;5;27m\]└>\[\e[38;5;198m\]>\[\e[38;5;214m\]>\[\e[00m\]'
+fi
 
 #如果在vim或vscode中打开terminal，则修改提示符,并且不执行cowsay
 if [ -n "$VIM_TERMINAL" ] || [ -n "$TERM_PROGRAM" ]; then
@@ -15,10 +19,27 @@ fi
 umask 0002
 #o判断是否已有开启的tmux窗口，没有则开启
 #if which tmux 2>&1 >/dev/null;then
-#	test -z "$TMUX" && (tmux attach || tmux)
+#	test -z "$TMUX" && (tmux a -t default || tmux new -s default)
 #fi
 
 #设置终端类型
 export TERM=xterm-256color
-#alias cman="man -M /usr/share/man/zh_CN"
+alias cman="man -M /usr/share/man/zh_CN"
+alias s="screenfetch"
 #export DISPLAY=:0
+
+#history显示执行时间
+export HISTTIMEFORMAT="%F %T "
+
+#初始化z.lua
+eval "$(lua ~/software/z.lua-1.8.13/z.lua  --init bash)"
+
+alias zc='z -c'      # 严格匹配当前路径的子路径
+alias zz='z -i'      # 使用交互式选择模式
+alias zf='z -I'      # 使用 fzf 对多个结果进行选择
+alias zb='z -b'      # 快速回到父目录
+alias zh='z -I -t .' # 历史路径搜索 使用fzf
+#alias zf='cd "$(z -l -s | fzf --reverse --height 35%)"' # 搭配 fzf 进行历史路径模糊匹配
+
+alias towork="tmux a -t work > /dev/null 2>&1 || ( tmux new -d -s work && tmux sp -v -t 0 && tmux sp -h -t 0 && tmux at )"
+alias todefault="tmux a -t default > /dev/null 2>&1 || ( tmux new -d -s default && tmux sp -h -t 0 && tmux sp -v -t 1 && tmux at )"

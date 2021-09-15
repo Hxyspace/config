@@ -146,7 +146,9 @@ func SkipPair()
 endfunc
 
 "airline设置
-let g:airline_powerline_fonts=1
+if empty($SSH_TTY)      "远程连接关闭特殊字符
+    let g:airline_powerline_fonts=1
+endif
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme="airlineish"
 "主题
