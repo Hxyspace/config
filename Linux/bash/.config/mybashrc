@@ -23,7 +23,8 @@ umask 0002
 #fi
 
 #设置终端类型
-export TERM=xterm-256color
+export TERM=xterm-256color          #防止vim主题色和tmux颜色冲突
+#export TERM=screen-256color
 alias cman="man -M /usr/share/man/zh_CN"
 alias s="screenfetch"
 #export DISPLAY=:0
