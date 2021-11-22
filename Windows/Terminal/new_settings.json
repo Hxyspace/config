@@ -22,7 +22,10 @@
                 "commandline": "powershell.exe -NoExit -Command \". $ThemePath\\theme.ps1\"",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
-                "fontFace": "FiraCode Nerd Font Mono",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
@@ -36,9 +39,9 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.85000002384185791,
+                "acrylicOpacity": 1.0,
                 "background": "#373B3E",
-                "backgroundImage": "ms-appdata:///local/miku.png",
+                "backgroundImage": null,
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
@@ -48,7 +51,10 @@
                 "commandline": "cmd.exe /k prompt $e[38;5;27m\u256d$e[48;5;242;38;5;255m$s+$e[48;5;12;38;5;242m\ue0b0$e[48;5;12;38;5;232m$T$e[6D$e[48;5;152;38;5;12m\ue0b0$e[48;5;152;38;5;232m$p$e[48;5;244;38;5;152m\ue0b0$e[0m$e[38;5;244m\ue0b0$_$e[38;5;27m\u2570$g$e[38;5;198m$g$e[38;5;214m$g$e[0m",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "filledBox",
-                "fontFace": "FiraCode Nerd Font Mono",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
@@ -74,7 +80,10 @@
                 "commandline": "D:\\program\\git\\bin\\bash.exe --login",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
-                "fontFace": "Cascadia Mono",
+                "font": 
+                {
+                    "face": "Cascadia Mono"
+                },
                 "guid": "{14ad203f-52cc-4110-90d6-d96e0f41b64d}",
                 "historySize": 9001,
                 "icon": "ms-appdata:///local/icon/git-bash.png",
@@ -88,18 +97,21 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.75,
+                "acrylicOpacity": 0.84999999999999998,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.30000001192092896,
+                "backgroundImageOpacity": 0.29999999999999999,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
                 "commandline": "ubuntu",
                 "cursorShape": "filledBox",
-                "fontFace": "FiraCode Nerd Font Mono",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "historySize": 9001,
@@ -114,18 +126,22 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.85000002384185791,
+                "acrylicOpacity": 1.0,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.30000001192092896,
+                "backgroundImageOpacity": 0.14999999999999999,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
-                "commandline": "ssh default",
+                "commandline": "ssh default -o Sendenv=sshclient",
                 "cursorShape": "filledBox",
-                "fontFace": "FiraCode Nerd Font Mono",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono",
+                    "size": 14
+                },
                 "guid": "{79a6ae24-fe70-4e7a-91a7-329c155020b3}",
                 "hidden": false,
                 "historySize": 9001,
@@ -137,7 +153,7 @@
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
                 "tabTitle": "SSH",
-                "useAcrylic": true
+                "useAcrylic": false
             },
             {
                 "acrylicOpacity": 0.84999999999999998,
@@ -151,7 +167,10 @@
                 "colorScheme": "Tango Dark",
                 "commandline": "wsl minicom -w -C $(date +%y-%m-%d-%H%M).log",
                 "cursorShape": "filledBox",
-                "fontFace": "FiraCode Nerd Font Mono",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
                 "guid": "{e12442a4-0a53-4e87-b630-32bfb12a59cc}",
                 "hidden": false,
                 "historySize": 9001,
