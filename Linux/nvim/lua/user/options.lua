@@ -66,3 +66,6 @@ require 'lsp.cmp'
 
 -- lsp-installer
 require 'lsp.installer'
+
+-- lspconfig
+require 'lsp.lspconfig'
