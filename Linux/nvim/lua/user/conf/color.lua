@@ -2,8 +2,18 @@ local color = {}
 
 function color.config()
     vim.cmd([[
-        hi Normal guibg=NONE ctermbg=NONE
-        hi MatchParen ctermbg=240 ctermfg=200 guibg=#9b9b9b
+        hi Normal guibg=NONE ctermbg=NONE   "默认背景色
+        hi MatchParen ctermbg=240 ctermfg=200 guibg=#9b9b9b  "括号匹配色
+        hi ColorColumn guibg=#9b9b9b        "宽度限制线
+
+        hi SignColumn guibg=NONE            "标号栏
+        hi CursorLineSign guibg=NONE        "标号
+        hi DiagnosticSignHint guibg=NONE
+        hi DiagnosticSignInfo guibg=NONE
+        hi DiagnosticSignWarn guibg=NONE
+        hi DiagnosticSignError guibg=NONE
+
+        hi VertSplit guibg=NONE             "窗口分割线
     ]])
 
     vim.g.terminal_ansi_colors = {'#000000', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#bbbbbb', '#44475a', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#ffffff'}

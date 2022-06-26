@@ -1,5 +1,6 @@
 local options = {
     number = true,          -- 行号
+    signcolumn = 'yes',      -- 显示右侧标号列
     showmode = true,        -- 右下角显示命令
     scrolloff = 7,          -- 光标上下方保留显示行数
 
