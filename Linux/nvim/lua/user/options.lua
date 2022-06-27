@@ -70,3 +70,9 @@ require 'lsp.installer'
 
 -- lspconfig
 require 'lsp.lspconfig'
+
+-- treesitter
+require 'user.conf.treesitter'
+
+-- autopairs
+require 'user.conf.autopairs'

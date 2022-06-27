@@ -4,7 +4,7 @@ function color.config()
     vim.cmd([[
         hi Normal guibg=NONE ctermbg=NONE   "默认背景色
         hi MatchParen ctermbg=240 ctermfg=200 guibg=#9b9b9b  "括号匹配色
-        hi ColorColumn guibg=#9b9b9b        "宽度限制线
+        hi ColorColumn guibg=#3c3836        "宽度限制线
 
         hi SignColumn guibg=NONE            "标号栏
         hi CursorLineSign guibg=NONE        "标号

@@ -16,6 +16,9 @@ function get_load_list_bufs()
     return load_list_bufs
 end
 
+--[[        --该方法在nvim v0.7.0以上版本无效，会报错
+
+--当nvim-tree为最后一个窗口时，退出nvim
 vim.api.nvim_create_autocmd("BufEnter", {
     nested = true,
     callback = function()
@@ -29,3 +32,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
   end
 })
+]]
