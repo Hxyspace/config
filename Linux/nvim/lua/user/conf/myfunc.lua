@@ -16,7 +16,7 @@ end
 vim.cmd([[
 func SkipPair()
     let c = getline('.')[col('.') - 1]
-    if c =~ '[\)\]\}\"'';]'
+    if c =~ '[\)\]\"'';]'
         return "\<Right>"
     else
         return "\<TAB>"
