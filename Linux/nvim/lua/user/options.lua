@@ -76,3 +76,6 @@ require 'user.conf.treesitter'
 
 -- autopairs
 require 'user.conf.autopairs'
+
+-- alpha-nvim
+require 'user.conf.alpha-nvim'

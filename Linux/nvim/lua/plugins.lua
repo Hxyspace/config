@@ -71,4 +71,13 @@ return require('packer').startup(function()
         'neovim/nvim-lspconfig',
     }
 
+    -- dashboard
+    -- use 'glepnir/dashboard-nvim'
+
+    -- alpha-nvim
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+
 end)
