@@ -1,3 +1,5 @@
+local fill_bg = '#3c3836'
+
 require("bufferline").setup {
     options = {
         -- 使用 nvim 内置lsp
@@ -12,52 +14,52 @@ require("bufferline").setup {
     },
     highlights = {
         fill = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         background = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         buffer = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         tab = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         close_button = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         diagnostic = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         info = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         info_diagnostic = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         warning = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         warning_diagnostic = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         error = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         error_diagnostic = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         modified = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         duplicate = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         separator = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         },
         pick = {
-            guibg = '#9b9b9b'
+            guibg = fill_bg
         }
     }
 }
