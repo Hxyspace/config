@@ -79,3 +79,6 @@ require 'user.conf.autopairs'
 
 -- alpha-nvim
 require 'user.conf.alpha-nvim'
+
+-- gitsigns
+require 'user.conf.gitsigns'

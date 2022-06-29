@@ -12,6 +12,9 @@ function color.config()
         hi DiagnosticSignInfo guibg=NONE
         hi DiagnosticSignWarn guibg=NONE
         hi DiagnosticSignError guibg=NONE
+        hi GitSignsAdd guibg=NONE
+        hi GitSignsChange guibg=NONE
+        hi GitSignsDelete guibg=NONE
 
         hi VertSplit guibg=NONE             "窗口分割线
     ]])
