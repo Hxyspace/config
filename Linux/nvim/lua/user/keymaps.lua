@@ -36,3 +36,6 @@ map("i", "<TAB>", "SkipPair()", { silent = true, expr = true })
 
 -- nvim-tree
 map("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
+
+-- 跳转返回
+map("n", "<leader>gb", "<C-t>", opts)

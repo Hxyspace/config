@@ -69,7 +69,7 @@ require 'lsp.cmp'
 require 'lsp.installer'
 
 -- lspconfig
-require 'lsp.lspconfig'
+require 'lsp.lspconfig'.setup()
 
 -- treesitter
 require 'user.conf.treesitter'

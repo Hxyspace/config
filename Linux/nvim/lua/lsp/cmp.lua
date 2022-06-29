@@ -114,8 +114,15 @@ cmp.setup {
 }
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('lsp.lspconfig').capabilities
+local on_attach = require('lsp.lspconfig').on_attach
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig').clangd.setup {
-  capabilities = capabilities
-}
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup({
+    on_attach = on_attach,
+    cmd = { "clangd" },
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+    root_dir = function() return vim.loop.cwd() end,
+    single_file_support = true,
+    capabilities = capabilities,
+})
