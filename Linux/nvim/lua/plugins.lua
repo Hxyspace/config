@@ -85,4 +85,7 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
     }
 
+    -- symbols-outline
+    use 'simrat39/symbols-outline.nvim'
+
 end)

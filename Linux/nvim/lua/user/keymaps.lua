@@ -39,3 +39,6 @@ map("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
 
 -- 跳转返回
 map("n", "<leader>gb", "<C-t>", opts)
+
+-- symbols-outline
+map("n", "<leader>sb", ":SymbolsOutline<CR>", opts)
