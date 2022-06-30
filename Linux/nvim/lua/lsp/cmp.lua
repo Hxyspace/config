@@ -113,6 +113,8 @@ cmp.setup {
 
 }
 
+require("nvim-lsp-installer").setup {}
+
 -- Setup lspconfig.
 local capabilities = require('lsp.lspconfig').capabilities
 local on_attach = require('lsp.lspconfig').on_attach
@@ -124,5 +126,9 @@ lspconfig.clangd.setup({
     filetypes = { "c", "cpp", "objc", "objcpp" },
     root_dir = function() return vim.loop.cwd() end,
     single_file_support = true,
+    capabilities = capabilities,
+})
+
+lspconfig.cmake.setup({
     capabilities = capabilities,
 })
