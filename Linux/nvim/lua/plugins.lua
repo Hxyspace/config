@@ -48,7 +48,7 @@ return require('packer').startup(function()
     -- nvim-treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        -- run = ':TSUpdate'
     }
 
     -- autopairs
@@ -62,8 +62,12 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
 
     -- vsnip
-    use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
-    use 'hrsh7th/vim-vsnip'
+    -- use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
+    -- use 'hrsh7th/vim-vsnip'
+
+    -- luasnip
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
 
     -- lsp
     use {
