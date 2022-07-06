@@ -82,3 +82,6 @@ require 'user.conf.alpha-nvim'
 
 -- gitsigns
 require 'user.conf.gitsigns'
+
+-- telescope
+require 'user.conf.telescope'

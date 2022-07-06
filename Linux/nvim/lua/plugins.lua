@@ -92,4 +92,10 @@ return require('packer').startup(function()
     -- symbols-outline
     use 'simrat39/symbols-outline.nvim'
 
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
 end)
