@@ -47,41 +47,8 @@ end
 vim.cmd([[ colorscheme gruvbox ]])
 require('user.conf.color').config()
 
--- nvim-tree
-require 'user.conf.nvim-tree'
-
--- bufferline
-require 'user.conf.bufferline'
-
--- lualine
-require 'user.conf.lualine'
-
 -- autocmd
 require 'user.conf.autocmd'
 
 -- myfunc
 require 'user.conf.myfunc'
-
--- nvim-cmp
-require 'lsp.cmp'
-
--- lsp-installer
-require 'lsp.installer'
-
--- lspconfig
-require 'lsp.lspconfig'.setup()
-
--- treesitter
-require 'user.conf.treesitter'
-
--- autopairs
-require 'user.conf.autopairs'
-
--- alpha-nvim
-require 'user.conf.alpha-nvim'
-
--- gitsigns
-require 'user.conf.gitsigns'
-
--- telescope
-require 'user.conf.telescope'

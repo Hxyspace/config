@@ -32,30 +32,40 @@ return require('packer').startup(function()
     -- nvim-tree
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require 'user.conf.nvim-tree' end
     }
 
     -- bufferline
     use {
         'akinsho/bufferline.nvim', 
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require 'user.conf.bufferline' end
     }
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function() require 'user.conf.lualine' end
     }
 
     -- nvim-treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        -- run = ':TSUpdate'
+        run = ':TSUpdate',
+        config = function() require 'user.conf.treesitter' end
     }
 
     -- autopairs
-    use 'windwp/nvim-autopairs'
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require("nvim-autopairs").setup() end
+    }
 
     -- cmp plugins
-    use 'hrsh7th/nvim-cmp'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function()  require 'lsp.cmp' end
+    }
     use 'hrsh7th/cmp-buffer'    -- buffer completions
     use 'hrsh7th/cmp-path'      -- path completions
     use 'hrsh7th/cmp-cmdline'   -- cmdline completions
@@ -72,7 +82,12 @@ return require('packer').startup(function()
     -- lsp
     use {
         'williamboman/nvim-lsp-installer',
+        config = function() require("nvim-lsp-installer").setup() end
+    }
+
+    use {
         'neovim/nvim-lspconfig',
+        config = function() require 'lsp.lspconfig'.setup() end
     }
 
     -- dashboard
@@ -81,12 +96,14 @@ return require('packer').startup(function()
     -- alpha-nvim
     use {
         'goolord/alpha-nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' }
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function() require 'user.conf.alpha-nvim' end
     }
 
     -- gitsigns
     use {
         'lewis6991/gitsigns.nvim',
+        config = function() require 'user.conf.gitsigns' end
     }
 
     -- symbols-outline
@@ -95,7 +112,8 @@ return require('packer').startup(function()
     -- telescope
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function() require 'user.conf.telescope' end
     }
 
 end)

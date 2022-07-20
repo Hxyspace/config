@@ -19,6 +19,7 @@ map("", "<C-l>", "<C-W>l", opts)
 map("n", "<C-n>", ":bn<CR>", opts)
 map("n", "<C-p>", ":bp<CR>", opts)
 map("n", "<leader><C-w>", ":bd!<CR>", opts)
+map("n", "<leader><C-q>", ":%bd<CR>", opts)
 
 -- H 和 L 跳转行首行末
 map("", "H", "^", opts)
