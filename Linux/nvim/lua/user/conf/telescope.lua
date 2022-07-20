@@ -1,4 +1,5 @@
-require('telescope').setup{
+local telescope = require('telescope')
+telescope.setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -28,3 +29,9 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
+
+local ok, msg = pcall(telescope.load_extension, 'workspaces')
+if not ok then
+    vim.notify("telescope load_extension workspaces fail")
+    return
+end

@@ -116,4 +116,10 @@ return require('packer').startup(function()
         config = function() require 'user.conf.telescope' end
     }
 
+    -- workspaces
+    use {
+        'natecraddock/workspaces.nvim',
+        config = function() require 'user.conf.workspaces' end
+    }
+
 end)
