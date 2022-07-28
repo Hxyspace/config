@@ -93,6 +93,12 @@ return require('packer').startup(function()
     -- lsp_signature
     use 'ray-x/lsp_signature.nvim'
 
+    -- nlsp-settings
+    use {
+        'tamago324/nlsp-settings.nvim',
+        config = function() require 'lsp.nlsp-settings' end
+    }
+
     -- dashboard
     -- use 'glepnir/dashboard-nvim'
 
