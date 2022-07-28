@@ -85,6 +85,9 @@ M.on_attach = function(client, bufnr)
   -- add outline support for evey lanuage
   -- require("aerial").on_attach(client, bufnr)
   require "lsp_signature".on_attach()
+  if client.name == "clangd" then
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ss", "<cmd>ClangdSwitchSourceHeader<CR>", { noremap = true, silent = true })
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
