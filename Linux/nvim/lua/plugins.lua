@@ -90,6 +90,9 @@ return require('packer').startup(function()
         config = function() require 'lsp.lspconfig'.setup() end
     }
 
+    -- lsp_signature
+    use 'ray-x/lsp_signature.nvim'
+
     -- dashboard
     -- use 'glepnir/dashboard-nvim'
 
