@@ -1,5 +1,5 @@
 require("workspaces").setup({
     hooks = {
-        open = "NvimTreeOpen",
+        open = "Telescope find_files",
     }
 })

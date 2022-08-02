@@ -127,7 +127,18 @@ lspconfig.clangd.setup({
     root_dir = function() return vim.loop.cwd() end,
     single_file_support = true,
     capabilities = capabilities,
+    -- handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
 })
+
+local root_dir = vim.loop.cwd()
+local ok, _ = string.find(root_dir, "kernel")
+if ok then
+    lspconfig.clangd.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
+    })
+end
 
 lspconfig.cmake.setup({
     capabilities = capabilities,
