@@ -116,7 +116,14 @@ return require('packer').startup(function()
     }
 
     -- symbols-outline
-    use 'simrat39/symbols-outline.nvim'
+    use {
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            vim.g.symbols_outline = {
+                show_symbol_details = false
+            }
+        end
+    }
 
     -- telescope
     use {
