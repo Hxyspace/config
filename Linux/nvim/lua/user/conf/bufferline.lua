@@ -1,5 +1,18 @@
 local fill_bg = '#3c3836'
 
+local highlights = {}
+local highlightItems = {
+    "fill", "background", "buffer", "tab", "close_button", "diagnostic",
+    "info", "info_diagnostic", "warning", "warning_diagnostic", "error",
+    "error_diagnostic", "modified", "duplicate", "separator", "pick"
+}
+
+for _, item in pairs(highlightItems) do
+    highlights[item] = {
+        guibg = fill_bg
+    }
+end
+
 require("bufferline").setup {
     options = {
         -- 使用 nvim 内置lsp
@@ -14,54 +27,5 @@ require("bufferline").setup {
         show_close_icon = false,
         show_buffer_close_icons = false
     },
-    highlights = {
-        fill = {
-            guibg = fill_bg
-        },
-        background = {
-            guibg = fill_bg
-        },
-        buffer = {
-            guibg = fill_bg
-        },
-        tab = {
-            guibg = fill_bg
-        },
-        close_button = {
-            guibg = fill_bg
-        },
-        diagnostic = {
-            guibg = fill_bg
-        },
-        info = {
-            guibg = fill_bg
-        },
-        info_diagnostic = {
-            guibg = fill_bg
-        },
-        warning = {
-            guibg = fill_bg
-        },
-        warning_diagnostic = {
-            guibg = fill_bg
-        },
-        error = {
-            guibg = fill_bg
-        },
-        error_diagnostic = {
-            guibg = fill_bg
-        },
-        modified = {
-            guibg = fill_bg
-        },
-        duplicate = {
-            guibg = fill_bg
-        },
-        separator = {
-            guibg = fill_bg
-        },
-        pick = {
-            guibg = fill_bg
-        }
-    }
+    highlights = highlights
 }
