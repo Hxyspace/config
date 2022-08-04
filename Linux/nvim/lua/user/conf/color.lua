@@ -22,6 +22,38 @@ function color.config()
     vim.g.terminal_ansi_colors = {'#000000', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#bbbbbb', '#44475a', '#ff5555', '#50fa7b', '#f1fa8c', '#bd93f9', '#ff79c6', '#8be9fd', '#ffffff'}
 end
 
+function color.gruvbox_setup()
+    local colors = require("gruvbox.palette")
+    local overrides = {}
+    local hiBgNoneOverrides = {}
+    local hiBgNoneItems = {
+        "Normal", "SignColumn", "CursorLineSign", "VertSplit",
+        "GitSignsAdd", "GitSignsChange", "GitSignsDelete"
+    }
+    for _, item in pairs(hiBgNoneItems) do
+        hiBgNoneOverrides[item] = {
+           bg = "NONE"
+        }
+    end
+
+    overrides = {
+        DiagnosticSignError = { fg = colors.bright_red },
+        DiagnosticSignWarn = { fg = colors.bright_yellow },
+        DiagnosticSignInfo = { fg = colors.bright_blue },
+        DiagnosticSignHint = { fg = colors.bright_aqua },
+        GitSignsChange = { fg = colors.bright_orange },
+        MatchParen = { bg = "#9b9b9b" },
+        ColorColumn = { bg = "#3c3836" }
+    }
+
+    overrides = vim.tbl_extend("force", hiBgNoneOverrides, overrides)
+
+    require("gruvbox").setup({
+        overrides = overrides
+    })
+
+end
+
 function color.lualine_theme_airlineish()
     local airlineish = {
         normal = {

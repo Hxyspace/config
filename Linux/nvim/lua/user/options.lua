@@ -44,8 +44,9 @@ end
 -------------------------------
 
 -- 配色方案
+require('user.conf.color').gruvbox_setup()
 vim.cmd([[ colorscheme gruvbox ]])
-require('user.conf.color').config()
+-- require('user.conf.color').config()
 
 -- autocmd
 require 'user.conf.autocmd'
