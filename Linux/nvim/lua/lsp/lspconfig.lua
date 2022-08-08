@@ -87,6 +87,8 @@ M.on_attach = function(client, bufnr)
   require "lsp_signature".on_attach()
   if client.name == "clangd" then
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ss", "<cmd>ClangdSwitchSourceHeader<CR>", { noremap = true, silent = true })
+    require('lsp.navic').attach(client, bufnr)
+    require('lsp.navic').show_winbar()
   end
 end
 

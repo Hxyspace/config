@@ -93,6 +93,13 @@ return require('packer').startup(function()
     -- lsp_signature
     use 'ray-x/lsp_signature.nvim'
 
+    -- nvim-navic
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig",
+        config = function() require('lsp.navic').enable() end
+    }
+
     -- nlsp-settings
     use {
         'tamago324/nlsp-settings.nvim',
