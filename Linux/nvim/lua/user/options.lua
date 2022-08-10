@@ -15,7 +15,7 @@ local options = {
     expandtab = true,       -- 空格代替tab
     colorcolumn = '80',     -- 限制行宽
     termguicolors = true,   -- 开启真彩色
-    background = dark,      -- 背景色
+    background = 'dark',    -- 背景色
     incsearch = true,       -- 增量搜索
     mouse = '',             -- 禁用鼠标
     ignorecase = true,      -- 搜索忽略大小写
@@ -44,9 +44,10 @@ end
 -------------------------------
 
 -- 配色方案
-require('user.conf.color').gruvbox_setup()
-vim.cmd([[ colorscheme gruvbox ]])
+-- require('user.conf.color').gruvbox_setup()
+-- vim.cmd([[ colorscheme gruvbox ]])
 -- require('user.conf.color').config()
+require('user.conf.colorscheme').setup()
 
 -- autocmd
 require 'user.conf.autocmd'

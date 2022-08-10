@@ -48,6 +48,9 @@ M.attach = function(client, bufnr)
 end
 
 M.enable = function()
+    navic.setup({
+        highlight = true
+    })
     vim.api.nvim_create_autocmd({ 'DirChanged', 'BufWinEnter', 'BufFilePost' }, {
         callback = function()
             show_winbar()

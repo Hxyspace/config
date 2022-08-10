@@ -42,6 +42,8 @@ function color.gruvbox_setup()
         DiagnosticSignInfo = { fg = colors.bright_blue },
         DiagnosticSignHint = { fg = colors.bright_aqua },
         GitSignsChange = { fg = colors.bright_orange },
+        GitSignsAdd = { fg = colors.bright_yellow },
+        GitSignsDelete = { fg = colors.bright_red },
         MatchParen = { bg = "#9b9b9b" },
         ColorColumn = { bg = "#3c3836" }
     }
@@ -52,6 +54,15 @@ function color.gruvbox_setup()
         overrides = overrides
     })
 
+end
+
+function color.catppuccin_setup()
+    require("catppuccin").setup({
+        integration = {
+            navic = true
+        },
+        highlight_overrides = {},
+    })
 end
 
 function color.lualine_theme_airlineish()

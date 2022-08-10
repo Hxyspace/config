@@ -28,6 +28,7 @@ return require('packer').startup(function()
     -- gruvbox theme
     -- use 'morhetz/gruvbox'
     use 'ellisonleao/gruvbox.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- nvim-tree
     use {
@@ -45,7 +46,7 @@ return require('packer').startup(function()
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function() require 'user.conf.lualine' end
+        config = function() require('user.conf.lualine').setup() end
     }
 
     -- nvim-treesitter
