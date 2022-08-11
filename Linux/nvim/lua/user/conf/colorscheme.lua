@@ -1,20 +1,23 @@
 local M = {}
 local lualine = require('user.conf.lualine')
+local bufferline = require('user.conf.bufferline')
 
-M.gruvboxSwitch = function()
+local function gruvboxSwitch()
     lualine.setAirlineish()
     vim.cmd([[ colorscheme gruvbox ]])
     vim.o.background = 'dark'
+    bufferline.set_highlight()
 end
 
-M.catppuccinSwitch = function()
+local function catppuccinSwitch()
     lualine.setTheme('catppuccin')
     vim.cmd([[ colorscheme catppuccin ]])
+    bufferline.set_highlight()
 end
 
 M.switchColor = function(...)
     local colorscheme = {...}
-    if #colorscheme == 0 then
+    if #colorscheme[1] == 0 then
         local currentColor = vim.g.colors_name
         if currentColor == "gruvbox" then
             M.switchColor("catppuccin")
@@ -23,13 +26,13 @@ M.switchColor = function(...)
         end
     else
         if colorscheme[1] == "gruvbox" then
-            local status_ok, _ = pcall(M.gruvboxSwitch)
+            local status_ok, _ = pcall(gruvboxSwitch)
             if not status_ok then
                 vim.notify("colorscheme gruvbox not found!")
                 return
             end
         elseif colorscheme[1] == "catppuccin" then
-            local status_ok, _ = pcall(M.catppuccinSwitch)
+            local status_ok, _ = pcall(catppuccinSwitch)
             if not status_ok then
                 vim.notify("colorscheme catppuccin not found!")
                 return
@@ -47,7 +50,7 @@ M.setup = function()
 end
 
 M.make_commands = function()
-    vim.cmd([[command! -nargs=? SwitchColor lua require('user.conf.colorscheme').switchColor(<f-args>)]])
+    vim.api.nvim_create_user_command("SwitchColor", function(opts) M.switchColor(opts.args) end, { nargs = "?" })
 end
 
 return M
