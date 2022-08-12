@@ -1,9 +1,9 @@
 local lazy = require("bufferline.lazy")
 local bufferline = lazy.require("bufferline")
-local highlighttool = lazy.require("bufferline.highlights")
 
 local M = {}
 local conf = {}
+local PREFIX = "BufferLine"
 
 local function highlight(fill_bg)
     local highlights = {}
@@ -20,16 +20,20 @@ local function highlight(fill_bg)
     return highlights
 end
 
-local function add_highlight_groups(map)
-    for name, tbl in pairs(map) do
-        highlighttool.add_group(name, tbl)
+local function hi_set_one(name, opts)
+    local hls = {}
+    for key, value in pairs(opts) do
+      if key == 'guibg' then hls['bg'] = value end
     end
+    vim.api.nvim_set_hl(0, name, hls)
 end
 
-local function update_highlight(conf)
-    groups.reset_highlights(conf.highlights)
-    add_highlight_groups(conf.highlights)
-    highlighttool.set_all(conf)
+local function update_highlight(highlights)
+    for name, tbl in pairs(highlights) do
+        -- convert 'bufferline_value' to 'BufferlineValue' -> snake to pascal
+        local name_format = PREFIX .. name:gsub("_(.)", name.upper):gsub("^%l", string.upper)
+        hi_set_one(name_format, tbl)
+    end
 end
 
 M.set_highlight = function()
@@ -42,7 +46,7 @@ M.set_highlight = function()
         fill_bg = light_bg
     end
     conf.highlights = highlight(fill_bg)
-    update_highlight(conf)
+    update_highlight(conf.highlights)
 end
 
 M.setup = function()
