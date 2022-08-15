@@ -36,16 +36,12 @@ local function update_highlight(highlights)
     end
 end
 
-M.set_highlight = function()
-    local dark_bg= '#3c3836'
-    local light_bg = '#dce0e8'
-    local fill_bg = dark_bg
-    if vim.o.background == "dark" then
-        fill_bg = dark_bg
-    elseif vim.o.background == "light" then
-        fill_bg = light_bg
-    end
-    conf.highlights = highlight(fill_bg)
+M.set_highlight = function(mode)
+    local mode2color = {
+        dark = '#3c3836',
+        light = '#dce0e8'
+    }
+    conf.highlights = highlight(mode2color[mode])
     update_highlight(conf.highlights)
 end
 

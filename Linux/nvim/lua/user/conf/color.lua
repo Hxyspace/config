@@ -57,6 +57,7 @@ function color.gruvbox_setup()
 end
 
 function color.catppuccin_setup()
+    vim.g.catppuccin_flavour = "latte"
     require("catppuccin").setup({
         integration = {
             navic = true
