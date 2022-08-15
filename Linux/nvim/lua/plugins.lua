@@ -28,7 +28,7 @@ return require('packer').startup(function()
     -- gruvbox theme
     -- use 'morhetz/gruvbox'
     use 'ellisonleao/gruvbox.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "catppuccin/nvim", as = "catppuccin", run = ":CatppuccinCompile" }
 
     -- nvim-tree
     use {

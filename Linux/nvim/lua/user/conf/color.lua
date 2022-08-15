@@ -28,7 +28,8 @@ function color.gruvbox_setup()
     local hiBgNoneOverrides = {}
     local hiBgNoneItems = {
         "Normal", "SignColumn", "CursorLineSign", "VertSplit",
-        "GitSignsAdd", "GitSignsChange", "GitSignsDelete"
+        "GruvboxRedSign", "GruvboxYellowSign", "GruvboxBlueSign",
+        "GruvboxAquaSign", "GruvboxGreenSign", "GruvboxOrangeSign"
     }
     for _, item in pairs(hiBgNoneItems) do
         hiBgNoneOverrides[item] = {
@@ -37,13 +38,7 @@ function color.gruvbox_setup()
     end
 
     overrides = {
-        DiagnosticSignError = { fg = colors.bright_red },
-        DiagnosticSignWarn = { fg = colors.bright_yellow },
-        DiagnosticSignInfo = { fg = colors.bright_blue },
-        DiagnosticSignHint = { fg = colors.bright_aqua },
         GitSignsChange = { fg = colors.bright_orange },
-        GitSignsAdd = { fg = colors.bright_yellow },
-        GitSignsDelete = { fg = colors.bright_red },
         MatchParen = { bg = "#9b9b9b" },
         ColorColumn = { bg = "#3c3836" }
     }
@@ -59,10 +54,18 @@ end
 function color.catppuccin_setup()
     vim.g.catppuccin_flavour = "latte"
     require("catppuccin").setup({
+        compile = {
+            enabled = true,
+            path = vim.fn.stdpath "cache" .. "/catppuccin",
+        },
         integration = {
             navic = true
         },
-        highlight_overrides = {},
+        highlight_overrides = {
+            latte = {
+                ColorColumn = { bg = "#e6e9ef" }
+            }
+        },
     })
 end
 
