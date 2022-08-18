@@ -39,7 +39,7 @@ function color.gruvbox_setup()
 
     overrides = {
         GitSignsChange = { fg = colors.bright_orange },
-        MatchParen = { bg = "#9b9b9b" },
+        WinBar = { fg = "#df8e1d" },
         ColorColumn = { bg = "#3c3836" }
     }
 
