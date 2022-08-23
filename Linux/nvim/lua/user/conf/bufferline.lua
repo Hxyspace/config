@@ -14,25 +14,18 @@ local function highlight(fill_bg)
     }
     for _, item in pairs(highlightItems) do
         highlights[item] = {
-            guibg = fill_bg
+            bg = fill_bg
         }
     end
     return highlights
 end
 
-local function hi_set_one(name, opts)
-    local hls = {}
-    for key, value in pairs(opts) do
-      if key == 'guibg' then hls['bg'] = value end
-    end
-    vim.api.nvim_set_hl(0, name, hls)
-end
 
 local function update_highlight(highlights)
-    for name, tbl in pairs(highlights) do
+    for name, opts in pairs(highlights) do
         -- convert 'bufferline_value' to 'BufferlineValue' -> snake to pascal
         local name_format = PREFIX .. name:gsub("_(.)", name.upper):gsub("^%l", string.upper)
-        hi_set_one(name_format, tbl)
+        vim.api.nvim_set_hl(0, name_format, opts)
     end
 end
 
