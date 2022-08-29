@@ -18,7 +18,8 @@ function autocmd.load_autocmds()
         packer = {},
         bufs = {},
         ft = {
-            { "FileType", "make", "set noexpandtab" },
+            { "FileType", "make", "setlocal noexpandtab" },
+            { "FileType", "Outline,qf", "setlocal signcolumn=no" },
         },
     }
 
