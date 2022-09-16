@@ -30,7 +30,9 @@ local cmp = require'cmp'
     }, {
       { name = 'buffer' },
     }, {
-        { name = 'path'}
+      { name = 'path' }
+    }, {
+      { name = 'calc' }
     })
   })
 
