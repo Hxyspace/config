@@ -83,30 +83,42 @@ lspconfig.<server_name>.setup({
 
 注：\<leader\>键为空格
 
-|      按键       |            功能             |
-| :-------------: | :-------------------------: |
-|     \<C-j\>     |       切换到下边窗口        |
-|     \<C-k\>     |       切换到上边窗口        |
-|     \<C-h\>     |       切换到左边窗口        |
-|     \<C-l\>     |       切换到右边窗口        |
-|     \<C-n\>     |      切换到下个buffer       |
-|     \<C-p\>     |      切换到上个buffer       |
-| \<leader\>\<C-w\> |       关闭当前buffer      |
-|     \<C-j\>     |        关闭terminal         |
-|        H        |          跳到行首           |
-|        L        |          跳到行尾           |
-|     \<TAB\>     |      列表选择/跳出括号      |
-|   \<leader\>e   |       打开文件浏览器        |
-|  \<leader\>sb   |        打开大纲导航         |
-|  \<leader\>ff   |          查找文件           |
-|  \<leader\>fg   |          查找文本           |
-|  \<leader\>fb   |         查找buffer          |
-|  \<leader\>fh   |        查找帮助文档         |
-|  \<leader\>gD   |       跳转到函数声明        |
-|  \<leader\>gd   |       跳转到函数定义        |
-|  \<leader\>gb   |       返回跳转前            |
-|  \<leader\>gh   |        显示函数说明         |
-|  \<leader\>rn   |         变量重命名          |
-|  \<leader\>dk   | 跳转到上一个警告/错误提示处 |
-|  \<leader\>dj   | 跳转到下一个警告/错误提示处 |
-|  \<leader\>gl   |    显示警告/错误提示说明    |
+|      按键         |            功能             |
+| :---------------: | :-------------------------: |
+|     \<C-j\>       |       切换到下边窗口        |
+|     \<C-k\>       |       切换到上边窗口        |
+|     \<C-h\>       |       切换到左边窗口        |
+|     \<C-l\>       |       切换到右边窗口        |
+|     \<C-n\>       |      切换到下个buffer       |
+|     \<C-p\>       |      切换到上个buffer       |
+| \<leader\>\<C-w\> |       关闭当前buffer        |
+| \<leader\>1..9    |    切换到相应序号buffer     |
+|     \<C-j\>       |        关闭terminal         |
+|        H          |          跳到行首           |
+|        L          |          跳到行尾           |
+|     \<TAB\>       |      列表选择/跳出括号      |
+|   \<leader\>e     |       打开文件浏览器        |
+|  \<leader\>sb     |        打开大纲导航         |
+|  \<leader\>ff     |          查找文件           |
+|  \<leader\>fg     |          查找文本           |
+|  \<leader\>fb     |         查找buffer          |
+|  \<leader\>fh     |        查找帮助文档         |
+|  \<leader\>gD     |       跳转到函数声明        |
+|  \<leader\>gd     |       跳转到函数定义        |
+|  \<leader\>gb     |         返回跳转前          |
+|  \<leader\>gh     |        显示函数说明         |
+|  \<leader\>ss     |      头文件/源文件切换      |
+|  \<leader\>rn     |         变量重命名          |
+|  \<leader\>fm     |         格式化代码          |
+|  \<leader\>lr     |     查找变量引用位置        |
+|  \<leader\>dk     | 跳转到上一个警告/错误提示处 |
+|  \<leader\>dj     | 跳转到下一个警告/错误提示处 |
+|  \<leader\>gl     |    显示警告/错误提示说明    |
+|  \<leader\>dq     |      显示所有警告/错误      |
+|     \[c           |        git上一处修改        |
+|     \]c           |        git上一处修改        |
+|  \<leader\>hv     |       显示git详细修改       |
+
+### other
+
+暗色亮色主题切换: `:SwitchColor [dark/light]`
