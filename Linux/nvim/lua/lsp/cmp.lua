@@ -132,9 +132,22 @@ lspconfig.clangd.setup({
     -- handlers = {['textDocument/publishDiagnostics'] = function(...) end  }
 })
 
+local enableDiag = function()
+    local enable = true
+    for dir in vim.fs.parents(vim.api.nvim_buf_get_name(0)) do
+        if vim.fn.filereadable(dir .. "/.disableDiag") == 1 then
+            enable = false
+            break
+        elseif vim.fn.filereadable(dir .. "/.enableDiag") == 1 then
+            enable = true
+            break
+        end
+    end
+    return enable
+end
+
 local root_dir = vim.loop.cwd()
-local ok, _ = string.find(root_dir, "kernel")
-if ok then
+if not enableDiag() then
     lspconfig.clangd.setup({
         on_attach = on_attach,
         capabilities = capabilities,
