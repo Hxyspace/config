@@ -53,4 +53,4 @@ require('user.conf.colorscheme').setup()
 require 'user.conf.autocmd'
 
 -- myfunc
-require 'user.conf.myfunc'
+require 'user.conf.myfunc'.createVimCmd()

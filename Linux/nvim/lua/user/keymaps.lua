@@ -33,7 +33,7 @@ map("", "L", "$", opts)
 map("t", "<C-j>", "<C-\\><C-n>:q!<CR>", opts)
 
 -- tab选中补全或跳出括号，shitf+tab反向
-map("i", "<TAB>", "SkipPair()", { silent = true, expr = true })
+-- map("i", "<TAB>", "SkipPair()", { silent = true, expr = true })
 
 -- nvim-tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

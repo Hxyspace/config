@@ -1,4 +1,5 @@
 local cmp = require'cmp'
+local myFunc = require 'user.conf.myfunc'
 
   cmp.setup({
     snippet = {
@@ -92,6 +93,8 @@ cmp.setup {
         luasnip.expand_or_jump()
 --    elseif has_words_before() then
 --      cmp.complete()
+      elseif myFunc.isClosePair() then
+        myFunc.moveLeft()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
