@@ -53,7 +53,9 @@ return require('packer').startup(function()
     -- nvim-treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
+        run = function()
+            require('nvim-treesitter.install').update({ with_sync = true })
+        end,
         config = function() require 'user.conf.treesitter' end
     }
 
@@ -106,10 +108,12 @@ return require('packer').startup(function()
     }
 
     -- nlsp-settings
+    --[[
     use {
         'tamago324/nlsp-settings.nvim',
         config = function() require 'lsp.nlsp-settings' end
     }
+    ]]
 
     -- dashboard
     -- use 'glepnir/dashboard-nvim'
