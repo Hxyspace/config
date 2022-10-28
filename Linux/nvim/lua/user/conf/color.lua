@@ -42,19 +42,19 @@ function color.gruvbox_setup()
         WinBar = { fg = "#df8e1d" },
         ColorColumn = { bg = "#3c3836" },
 
-        TSURI           = { fg = "#dc8a78" },
-        TSNamespace     = { fg = "#fabd2f" },
-        TSMethod        = { fg = "#fabd2f" },
-        TSFunction      = { fg = "#fabd2f" },
-        TSType          = { fg = "#df8e1d" },
-        TSField         = { fg = "#d3869b" },
-        TSConstructor   = { fg = "#fb4934" },
-        TSString        = { fg = "#40a02b" },
-        TSNumber        = { fg = "#fe640b" },
-        TSBoolean       = { fg = "#fe640b" },
-        TSConstant      = { fg = "#fe640b" },
-        TSOperator      = { fg = "#04a5e5" },
-        TSParameter     = { fg = "#e64553" }
+        TSURI           = { link = "Underlined" },
+        TSNamespace     = { link = "Include"    },
+        TSMethod        = { link = "Function"   },
+        TSFunction      = { link = "Function"   },
+        TSType          = { link = "Type"       },
+        TSField         = { link = "Identifier" },
+        TSConstructor   = { link = "Special"    },
+        TSString        = { link = "String"     },
+        TSNumber        = { link = "Number"     },
+        TSBoolean       = { link = "Boolean"    },
+        TSConstant      = { link = "Constant"   },
+        TSOperator      = { link = "Operator"   },
+        TSParameter     = { link = "Identifier" }
     }
 
     overrides = vim.tbl_extend("force", hiBgNoneOverrides, overrides)
@@ -77,7 +77,21 @@ function color.catppuccin_setup()
         },
         highlight_overrides = {
             latte = {
-                ColorColumn = { bg = "#e6e9ef" }
+                ColorColumn = { bg = "#e6e9ef" },
+
+                TSURI           = { link = "Underlined" },
+                TSNamespace     = { link = "Include"    },
+                TSMethod        = { link = "Function"   },
+                TSFunction      = { link = "Function"   },
+                TSType          = { link = "Type"       },
+                TSField         = { link = "Identifier" },
+                TSConstructor   = { link = "Special"    },
+                TSString        = { link = "String"     },
+                TSNumber        = { link = "Number"     },
+                TSBoolean       = { link = "Boolean"    },
+                TSConstant      = { link = "Constant"   },
+                TSOperator      = { link = "Operator"   },
+                TSParameter     = { link = "Identifier" }
             }
         },
     })

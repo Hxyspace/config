@@ -8,14 +8,15 @@ local mode_reverse = {
 }
 
 local function gruvboxSwitch()
+    vim.o.background = 'dark'
     lualine.setAirlineish()
     vim.cmd([[ colorscheme gruvbox ]])
-    vim.o.background = 'dark'
     bufferline.set_highlight('dark')
     vim.cmd([[ TSDisable highlight ]])
 end
 
 local function catppuccinSwitch()
+    vim.o.background = 'light'
     lualine.setTheme('catppuccin')
     vim.cmd([[ colorscheme catppuccin ]])
     bufferline.set_highlight('light')
