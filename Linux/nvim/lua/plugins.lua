@@ -150,4 +150,20 @@ return require('packer').startup(function()
         config = function() require 'user.conf.workspaces' end
     }
 
+    -- leap
+    use {
+        'ggandor/leap.nvim',
+        config = function()
+            vim.keymap.set({'n', 'x', 'o'}, '<leader>/', '<Plug>(leap-forward-to)')
+            vim.keymap.set({'n', 'x', 'o'}, '<leader>?', '<Plug>(leap-backward-to)')
+        end
+    }
+
+    -- toggleterm
+    use {
+        'akinsho/toggleterm.nvim',
+        tag = '*',
+        config = function() require 'user.conf.toggleterm' end
+    }
+
 end)

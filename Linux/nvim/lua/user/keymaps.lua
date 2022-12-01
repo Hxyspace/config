@@ -31,6 +31,7 @@ map("", "L", "$", opts)
 
 -- 关闭内置terminal
 map("t", "<C-j>", "<C-\\><C-n>:q!<CR>", opts)
+map("t", "<esc>", "<C-\\><C-n>", opts)
 
 -- tab选中补全或跳出括号，shitf+tab反向
 -- map("i", "<TAB>", "SkipPair()", { silent = true, expr = true })
