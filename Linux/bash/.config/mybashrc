@@ -13,7 +13,7 @@ if [ "$sshclient"a = 'yuan'a ]; then
     echo -ne "\e[2 q\e]12;#27ae60\x7"
 fi
 #如果在vim或vscode中打开terminal，则修改提示符,并且不执行cowsay
-if [ -n "$VIM_TERMINAL" ] || [ -n "$TERM_PROGRAM" ]; then
+if [ -n "$VIM_TERMINAL" ] || [ -n "$TERM_PROGRAM" ] || [ -n "$VIMRUNTIME" ]; then
     PS1='> '
 else
     fortune | cowthink | lolcat
