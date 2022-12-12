@@ -150,6 +150,11 @@ return require('packer').startup(function()
         config = function() require 'user.conf.workspaces' end
     }
 
+    -- telescope-ui-select
+    use {
+        'nvim-telescope/telescope-ui-select.nvim'
+    }
+
     -- leap
     use {
         'ggandor/leap.nvim',

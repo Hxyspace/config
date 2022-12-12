@@ -27,11 +27,22 @@ telescope.setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
+    }
   }
 }
 
 local ok, msg = pcall(telescope.load_extension, 'workspaces')
 if not ok then
     vim.notify("telescope load_extension workspaces fail")
+    return
+end
+
+local ok, msg = pcall(telescope.load_extension, 'ui-select')
+if not ok then
+    vim.notify("telescope load_extension ui-select fail")
     return
 end
