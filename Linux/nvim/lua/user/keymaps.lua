@@ -29,6 +29,12 @@ map("", "L", "$", opts)
 -- map("n", "/", "/\\v", opts)
 -- map("v", "/", "/\\v", opts)
 
+-- 搜索列表
+map("n", "<leader>%", "yiw:vim /\\<<C-R>\"\\>/j %<CR>:copen<CR>", opts)
+map("n", "<leader>*", "yiw:vim /\\<<C-R>\"\\>/j **<CR>:copen<CR>", opts)
+map("v", "<leader>%", "y:vim /\\<<C-R>\"\\>/j %<CR>:copen<CR>", opts)
+map("v", "<leader>*", "y:vim /\\<<C-R>\"\\>/j **<CR>:copen<CR>", opts)
+
 -- 关闭内置terminal
 map("t", "<C-j>", "<C-\\><C-n>:q!<CR>", opts)
 map("t", "<esc>", "<C-\\><C-n>", opts)
