@@ -5,7 +5,7 @@ function set-myPrompt{
     )
 
 	#喵头
-	Write-Prompt "$esc[$Fore$($skyBlue)m$firstline$esc[$Back$($red)m $CatEmoji$esc[$Fore$red;$Back$($darkBlue)m$pl_left"
+	Write-Prompt "$esc[$Fore$($skyBlue)m$firstline$esc[$Fore$($white);$Back$($startgrey)m +$esc[$Fore$startgrey;$Back$($darkBlue)m$pl_left"
 	
 	#管理员运行时显示
     #check for elevated prompt
@@ -20,13 +20,13 @@ function set-myPrompt{
 	}
     $computer = [System.Environment]::MachineName
     if (Test-NotDefaultUser($user)) {
-        Write-Prompt "$esc[$Fore$dark;$Back$($darkBlue)m$user@$computer$esc[$Fore$darkBlue;$Back$($green)m$pl_left"
+        Write-Prompt "$esc[$Fore$dark;$Back$($darkBlue)m$user@$computer$esc[$Fore$darkBlue;$Back$($greenwhite)m$pl_left"
     }
 	
 	#文件夹路径
 	$path = Get-ShortPath $pwd
 	#$path =$pwd
-	Write-Prompt "$esc[$Fore$dark;$Back$($green)m$path$esc[$Fore$green;$Back$($grey)m$pl_left$esc[0m$esc[$Fore$($grey)m$pl_left"
+	Write-Prompt "$esc[$Fore$dark;$Back$($greenwhite)m$path$esc[$Fore$greenwhite;$Back$($endgrey)m$pl_left$esc[0m$esc[$Fore$($endgrey)m$pl_left"
 	
 	
 	#上一个命令执行状态
@@ -45,7 +45,7 @@ function set-myPrompt{
 	#Set-Newline
 	
 	#收尾
-	"$esc[0m$esc[$Fore$($skyBlue)m$secondline$EnterChar$esc[$Fore$($red)m$EndChar$esc[$Fore$($yellow)m$EndChar"
+	"$esc[0m$esc[$Fore$($skyBlue)m$secondline$EnterChar$esc[$Fore$($startgrey)m$EndChar$esc[$Fore$($yellow)m$EndChar"
 }
 
 function prompt{
@@ -128,10 +128,12 @@ $Back = "48;2;"
 $dark = "0;0;0"
 $white = "238;238;236"
 $red = "255;0;95"
+$startgrey = "108;108;108"
 $skyBlue = "0;95;255"
 $blue = "114;159;207"
 $midBlue = "52;101;164"
-$darkBlue = "95;95;255"
+$darkBlue = "114;159;207"
 $green = "135;215;0"
-$grey = "128;128;128"
+$greenwhite = "175;215;215"
+$endgrey = "128;128;128"
 $yellow = "255;175;0"

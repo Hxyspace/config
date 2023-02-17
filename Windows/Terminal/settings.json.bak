@@ -1,40 +1,32 @@
 {
-    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
     "alwaysShowTabs": false,
     "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
     "initialCols": 90,
     "initialRows": 30,
-    "launchMode": "default",
-    "profiles":
+    "profiles": 
     {
-        "defaults":
-        {
-            "closeOnExit": "always"
-        },
-        "list":
+        "defaults": {},
+        "list": 
         [
             {
+                "acrylicOpacity": 0.85000002384185791,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.3,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
                 "commandline": "powershell.exe -NoExit -Command \". $ThemePath\\theme.ps1\"",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono"
-                },
+                "fontFace": "FiraCode Nerd Font Mono",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
                 "name": "Windows Powershell",
-                "opacity": 85,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
@@ -44,10 +36,11 @@
                 "useAcrylic": true
             },
             {
+                "acrylicOpacity": 0.85000002384185791,
                 "background": "#373B3E",
-                "backgroundImage": null,
+                "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.3,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
@@ -55,15 +48,11 @@
                 "commandline": "cmd.exe /k prompt $e[38;5;27m\u256d$e[48;5;242;38;5;255m$s+$e[48;5;12;38;5;242m\ue0b0$e[48;5;12;38;5;232m$T$e[6D$e[48;5;152;38;5;12m\ue0b0$e[48;5;152;38;5;232m$p$e[48;5;244;38;5;152m\ue0b0$e[0m$e[38;5;244m\ue0b0$_$e[38;5;27m\u2570$g$e[38;5;198m$g$e[38;5;214m$g$e[0m",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono"
-                },
+                "fontFace": "FiraCode Nerd Font Mono",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
                 "name": "cmd",
-                "opacity": 100,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
@@ -73,10 +62,11 @@
                 "useAcrylic": true
             },
             {
+                "acrylicOpacity": 0.85000002384185791,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.3,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
@@ -84,15 +74,11 @@
                 "commandline": "D:\\program\\git\\bin\\bash.exe --login",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "bar",
-                "font":
-                {
-                    "face": "Cascadia Mono"
-                },
+                "fontFace": "Cascadia Mono",
                 "guid": "{14ad203f-52cc-4110-90d6-d96e0f41b64d}",
                 "historySize": 9001,
                 "icon": "ms-appdata:///local/icon/git-bash.png",
                 "name": "Git Bash",
-                "opacity": 85,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
@@ -102,26 +88,23 @@
                 "useAcrylic": true
             },
             {
+                "acrylicOpacity": 0.75,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.3,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
                 "commandline": "ubuntu",
                 "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono"
-                },
+                "fontFace": "FiraCode Nerd Font Mono",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "historySize": 9001,
                 "icon": "ms-appdata:///local/icon/ubuntu.ico",
                 "name": "Ubuntu",
-                "opacity": 85,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
@@ -131,83 +114,49 @@
                 "useAcrylic": true
             },
             {
+                "acrylicOpacity": 0.85000002384185791,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.15,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
-                "commandline": "ssh default -o Sendenv=sshclient",
+                "commandline": "ssh default",
                 "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono",
-                    "size": 14.0
-                },
+                "fontFace": "FiraCode Nerd Font Mono",
                 "guid": "{79a6ae24-fe70-4e7a-91a7-329c155020b3}",
                 "hidden": false,
                 "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.scale-100.png",
                 "name": "SSH",
-                "opacity": 100,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
                 "tabTitle": "SSH",
-                "useAcrylic": false
+                "useAcrylic": true
             },
             {
+                "acrylicOpacity": 0.84999999999999998,
                 "background": "#373B3E",
                 "backgroundImage": "ms-appdata:///local/miku.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.15,
-                "backgroundImageStretchMode": "uniform",
-                "bellStyle": "none",
-                "colorScheme": "Tango Dark",
-                "commandline": "arch",
-                "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono",
-                    "size": 14.0
-                },
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
-                "hidden": false,
-                "icon": "ms-appdata:///local/icon/arch.ico",
-                "name": "Arch",
-                "opacity": 100,
-                "padding": "0",
-                "scrollbarState": "hidden",
-                "source": "Windows.Terminal.Wsl",
-                "suppressApplicationTitle": true,
-                "tabTitle": "Arch",
-                "useAcrylic": false
-            },
-            {
-                "background": "#373B3E",
-                "backgroundImage": "ms-appdata:///local/miku.png",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.3,
+                "backgroundImageOpacity": 0.30000001192092896,
                 "backgroundImageStretchMode": "uniform",
                 "bellStyle": "none",
                 "closeOnExit": "graceful",
                 "colorScheme": "Tango Dark",
                 "commandline": "wsl minicom -w -C $(date +%y-%m-%d-%H%M).log",
                 "cursorShape": "filledBox",
-                "font":
-                {
-                    "face": "FiraCode Nerd Font Mono"
-                },
+                "fontFace": "FiraCode Nerd Font Mono",
                 "guid": "{e12442a4-0a53-4e87-b630-32bfb12a59cc}",
                 "hidden": false,
                 "historySize": 9001,
                 "icon": "ms-appdata:///local/icon/usb.png",
                 "name": "Serial COM4",
-                "opacity": 85,
                 "padding": "0, 0, 0, 0",
                 "scrollbarState": "hidden",
                 "snapOnInput": true,
@@ -225,7 +174,7 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
@@ -484,6 +433,5 @@
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": true,
     "theme": "dark",
-    "themes": [],
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }
