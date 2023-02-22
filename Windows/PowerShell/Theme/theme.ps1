@@ -1,69 +1,69 @@
 function set-myPrompt{
-	param(
+    param(
         [bool]
         $lastCommandSuccess
     )
 
-	#喵头
-	Write-Prompt "$esc[$Fore$($skyBlue)m$firstline$esc[$Fore$($white);$Back$($startgrey)m +$esc[$Fore$startgrey;$Back$($darkBlue)m$pl_left"
-	
-	#管理员运行时显示
+    #喵头
+    Write-Prompt "$esc[$Fore$($skyBlue)m$firstline$esc[$Fore$($white);$Back$($startgrey)m +$esc[$Fore$startgrey;$Back$($darkBlue)m$pl_left"
+
+    #管理员运行时显示
     #check for elevated prompt
     If (Test-Administrator) {
         Write-Prompt "$esc[$Fore$yellow;$Back$($darkBlue)m$elevated"
     }
-	
-	#用户+计算机名
-	$user = [System.Environment]::UserName
-	if($user -eq "19098") {
-		$user = "yuan"
-	}
+
+    #用户+计算机名
+    $user = [System.Environment]::UserName
+    if($user -eq "19098") {
+        $user = "yuan"
+    }
     $computer = [System.Environment]::MachineName
     if (Test-NotDefaultUser($user)) {
         Write-Prompt "$esc[$Fore$dark;$Back$($darkBlue)m$user@$computer$esc[$Fore$darkBlue;$Back$($greenwhite)m$pl_left"
     }
-	
-	#文件夹路径
-	$path = Get-ShortPath $pwd
-	#$path =$pwd
-	Write-Prompt "$esc[$Fore$dark;$Back$($greenwhite)m$path$esc[$Fore$greenwhite;$Back$($endgrey)m$pl_left$esc[0m$esc[$Fore$($endgrey)m$pl_left"
-	
-	
-	#上一个命令执行状态
+
+    #文件夹路径
+    $path = Get-ShortPath $pwd
+    #$path =$pwd
+    Write-Prompt "$esc[$Fore$dark;$Back$($greenwhite)m$path$esc[$Fore$greenwhite;$Back$($endgrey)m$pl_left$esc[0m$esc[$Fore$($endgrey)m$pl_left"
+
+
+    #上一个命令执行状态
     If ($lastCommandSuccess) {
         Write-Prompt "$esc[$Fore$($green)m $SuccessCommandSymbol"
     } else {
         Write-Prompt "$esc[$Fore$($red)m $FailedCommandSymbol"
     }
-	
-	#右边显示时间
-	$dateTime = get-date -Format "HH:mm"
+
+    #右边显示时间
+    $dateTime = get-date -Format "HH:mm"
     Set-CursorForRightBlockWrite -textLength ($dateTime.Length + $pl_right.Length + $pl_right.Length + $elevated.Length)
     Write-Host "$esc[$Fore$($darkBlue)m$elevated$esc[$Fore$($blue)m$pl_right$esc[$Fore$midBlue;$Back$($blue)m$pl_right$esc[$Fore$white;$Back$($midBlue)m$dateTime"
-	
-	#另起一行
-	#Set-Newline
-	
-	#收尾
-	"$esc[0m$esc[$Fore$($skyBlue)m$secondline$EnterChar$esc[$Fore$($startgrey)m$EndChar$esc[$Fore$($yellow)m$EndChar"
+
+    #另起一行
+    #Set-Newline
+
+    #收尾
+    "$esc[0m$esc[$Fore$($skyBlue)m$secondline$EnterChar$esc[$Fore$($startgrey)m$EndChar$esc[$Fore$($yellow)m$EndChar"
 }
 
 function prompt{
-	
-	#上一个命令执行状态必须在这里保存，因为配置文件中执行命令的状态会覆盖用户执行的命令状态
-	$lastCommand = $?
-	
-	set-myPrompt $lastCommand
-	
+
+    #上一个命令执行状态必须在这里保存，因为配置文件中执行命令的状态会覆盖用户执行的命令状态
+    $lastCommand = $?
+
+    set-myPrompt $lastCommand
+
 }
 
 
 function Write-Prompt {
-	param(
+    param(
         [string]
         $str
     )
-	Write-Host $str -nonewline
+    Write-Host $str -nonewline
 }
 
 function Test-NotDefaultUser($user) {
@@ -87,10 +87,10 @@ function Get-ShortPath {
         [string]
         $dir
     )
-	if($dir.LastIndexOf("\") -eq $dir.Length - 1){
-		return $dir.replace("\","")
-	}
-	return $dir.replace("$HOME","~")
+    if($dir.LastIndexOf("\") -eq $dir.Length - 1){
+        return $dir.replace("\","")
+    }
+    return $dir.replace("$HOME","~")
 }
 
 function Set-CursorForRightBlockWrite {
