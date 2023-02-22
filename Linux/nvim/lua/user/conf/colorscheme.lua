@@ -16,9 +16,9 @@ local function gruvboxSwitch()
 end
 
 local function catppuccinSwitch()
-    vim.o.background = 'light'
+--    vim.o.background = 'light'
     lualine.setTheme('catppuccin')
-    vim.cmd([[ colorscheme catppuccin ]])
+    vim.cmd([[ colorscheme catppuccin-latte ]])
     bufferline.set_highlight('light')
     vim.cmd([[ TSEnable highlight ]])
 end

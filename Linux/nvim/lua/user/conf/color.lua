@@ -66,7 +66,7 @@ function color.gruvbox_setup()
 end
 
 function color.catppuccin_setup()
-    vim.g.catppuccin_flavour = "latte"
+--    vim.g.catppuccin_flavour = "latte"
     require("catppuccin").setup({
         compile = {
             enabled = true,
