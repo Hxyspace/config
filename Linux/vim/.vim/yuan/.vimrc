@@ -1,3 +1,6 @@
+"设置leaderkey
+let mapleader=" "
+let maplocalleader=" "
 "设置行号
 set nu
 "相对行号
@@ -75,7 +78,7 @@ map <C-l> <C-W>l
 "ctrl + n/p 切换buffer  , ctrl + w 关闭当前buffer
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
-nnoremap <esc>w :bd<CR>
+nnoremap <Leader><C-w> :bd<CR>
 " H 和 L 跳转行首行末
 noremap H ^
 noremap L $
@@ -132,7 +135,7 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline'
     Plug 'Hxyspace/vim-airlineish'
     "补全框架
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "括号补全
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
@@ -160,10 +163,10 @@ hi Terminal guibg='#282a36'
 
 "设置ctags
 set tags=./tags;,/usr/include/.tags,tags,.tags
-nnoremap <esc>t :!ctags --languages=c -o .tags -R <CR><CR>
+nnoremap <Leader>t :!ctags --languages=c -o .tags -R <CR><CR>
 
 "nerdtree config
-nnoremap <esc>b :NERDTreeToggle<CR>
+nnoremap <Leader>e :NERDTreeToggle<CR>
 let NERDTreeWinSize=23
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
