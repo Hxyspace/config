@@ -1,4 +1,16 @@
+/*********
+* Common *
+*********/
+* {
+  outline-color: rgba(216, 222, 233, 0.3);
+  outline-style: dashed;
+  outline-offset: -3px;
+  outline-width: 1px;
+  }
 
+/***********
+ * Buttons *
+ ***********/
 button {
   min-height: 20px;
   min-width: 16px;
@@ -47,7 +59,13 @@ entry selection, row:selected, treeview.view:selected:focus, treeview.view:selec
     background-color: #c6737b;
     color: rgba(216, 222, 233, 0.5); }
 
-
+/*********
+ * Menus *
+ *********/
+menubar > menuitem,
+.menubar > menuitem {
+  min-height: 16px;
+  padding: 4px 8px; }
 menu, .menu, .context-menu {
   margin: 4px;
   padding: 2px 0px;
@@ -63,6 +81,14 @@ menu, .menu, .context-menu {
     menu menuitem:hover, .menu menuitem:hover, .context-menu menuitem:hover {
       color: #d8dee9;
       background-color: #4c566a; }
+    menu menuitem:disabled, .menu menuitem:disabled, .context-menu menuitem:disabled {
+      color: #8a909e; }
+menuitem check {
+  min-height: 16px;
+  min-width: 16px; }
+  menuitem check:dir(ltr) {
+    margin-right: 7px;
+    margin-left: 7px; }
 
 /***********
  * LightDm *
