@@ -13,7 +13,7 @@ local options = {
     tabstop = 4,
 
     expandtab = true,       -- 空格代替tab
-    colorcolumn = '80',     -- 限制行宽
+    colorcolumn = '100',     -- 限制行宽
     termguicolors = true,   -- 开启真彩色
     background = 'dark',    -- 背景色
     incsearch = true,       -- 增量搜索

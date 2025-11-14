@@ -52,3 +52,9 @@ alias zh='z -I -t .' # 历史路径搜索 使用fzf
 
 alias towork="tmux a -t work > /dev/null 2>&1 || ( tmux new -d -s work && tmux sp -v -t 0 && tmux sp -h -t 0 && tmux at )"
 alias todefault="tmux a -t default > /dev/null 2>&1 || ( tmux new -d -s default && tmux sp -h -t 0 && tmux sp -v -t 1 && tmux at )"
+
+if [ -z "$DISPLAY" ]; then
+    export DISPLAY=$(echo $SSH_CLIENT | cut -d' ' -f1):0.0
+fi
+
+alias vi=nvim

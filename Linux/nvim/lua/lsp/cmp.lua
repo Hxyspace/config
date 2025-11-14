@@ -166,6 +166,11 @@ lspconfig.jsonls.setup({
     capabilities = capabilities,
 })
 
+lspconfig.quick_lint_js.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
     cmd = { "rust-analyzer" },
